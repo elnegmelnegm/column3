@@ -1,6 +1,7 @@
 import streamlit as st
 import plotly.express as px
 import pandas as pd
+from PIL import Image
 
 # Your data
 data = {
@@ -97,7 +98,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Streamlit app
-st.title("3D Scatter Plot with Principle Component Analysis for HPLC columns")
+st.subheader("3D Scatter Plot with Principle Component Analysis for HPLC columns")
 st.write("Hover over points to see labels.")
 
 # Selectbox for column selection
