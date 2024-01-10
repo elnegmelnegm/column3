@@ -21,8 +21,9 @@ st.write("Hover over points to see labels.")
 selected_category = st.selectbox("Select a category:", df['Column'])
 
 # Set color based on the selected category
-color_map = {'Selected': ['red' if category == selected_category else 'gray' for category in df['Column']]}
-fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color_discrete_map=color_map)
+df['Color'] = df['Column'].apply(lambda x: 'green' if x == selected_category else 'gray')
+
+fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color='Color')
 
 fig.update_traces(marker=dict(size=12))
 
