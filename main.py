@@ -26,7 +26,7 @@ fig.update_layout(scene=dict(
                     xaxis_title='Principal Component 1',
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
-                    scene_bgcolor='rgba(170, 170, 170, 0.8)',  # Darker gray background
+                    
                     width=800,  # Set the width of the figure
                     height=600)  # Set the height of the figure
 
