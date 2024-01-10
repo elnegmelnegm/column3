@@ -31,9 +31,9 @@ fig.update_layout(scene=dict(
                     xaxis_title='Principal Component 1',
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
-                    scene_bgcolor='rgba(50, 50, 50, 0.8)',  # Darker gray background
-                    width=800,  # Set the width of the figure
-                    height=600)  # Set the height of the figure
+                    
+                    width=850,  # Set the width of the figure
+                    height=690)  # Set the height of the figure
 
 # Make all legends gray
 fig.update_layout(legend=dict(title=dict(text=''), bgcolor='rgba(200, 200, 200, 0.7)'))
