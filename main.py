@@ -2,6 +2,8 @@ import streamlit as st
 import plotly.express as px
 import pandas as pd
 from PIL import Image
+image_path = 'https://www.edaegypt.gov.eg/media/wc3lsydo/group-287.png'
+st.image(image_path)
 
 # Your data
 data = {
