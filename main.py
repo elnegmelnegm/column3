@@ -17,8 +17,11 @@ df = pd.DataFrame(data)
 st.title("3D Scatter Plot with Plotly and Streamlit")
 st.write("Hover over points to see labels.")
 
-# 3D Scatter Plot with a larger figure
-fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color='Column')
+# Selectbox for column selection
+selected_column = st.selectbox("Select a column:", df.columns)
+
+# Set color based on the selected column
+fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color=selected_column)
 
 fig.update_traces(marker=dict(size=12))
 
@@ -27,7 +30,13 @@ fig.update_layout(scene=dict(
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
                     
-                    width=850,  # Set the width of the figure
-                    height=700)  # Set the height of the figure
+                    width=800,  # Set the width of the figure
+                    height=600)  # Set the height of the figure
+
+# Make all legends gray
+fig.update_layout(legend=dict(title=dict(text=''), bgcolor='rgba(200, 200, 200, 0.7)'))
+
+# Highlight selected column in red
+fig.update_traces(selector=dict(column=selected_column), marker=dict(color='red'))
 
 st.plotly_chart(fig)
