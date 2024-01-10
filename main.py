@@ -17,7 +17,7 @@ df = pd.DataFrame(data)
 st.title("3D Scatter Plot with Plotly and Streamlit")
 st.write("Hover over points to see labels.")
 
-# 3D Scatter Plot
+# 3D Scatter Plot with light gray background
 fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color='Column')
 
 fig.update_traces(marker=dict(size=12))
@@ -25,8 +25,7 @@ fig.update_traces(marker=dict(size=12))
 fig.update_layout(scene=dict(
                     xaxis_title='Principal Component 1',
                     yaxis_title='Principal Component 2',
-                    zaxis_title='Principal Component 3'))
+                    zaxis_title='Principal Component 3'),
+                    scene_bgcolor='rgba(200, 200, 200, 0.5)')  # Light gray background
 
 st.plotly_chart(fig)
-
-
