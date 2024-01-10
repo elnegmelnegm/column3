@@ -21,7 +21,7 @@ st.write("Hover over points to see labels.")
 selected_category = st.selectbox("Select a category:", df['Column'])
 
 # Set color based on the selected category
-df['Color'] = df['Column'].apply(lambda x: 'green' if x == selected_category else 'gray')
+df['Color'] = df['Column'].apply(lambda x: 'red' if x == selected_category else 'gray')
 
 fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color='Color')
 
@@ -31,7 +31,6 @@ fig.update_layout(scene=dict(
                     xaxis_title='Principal Component 1',
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
-                    
                     width=850,  # Set the width of the figure
                     height=690)  # Set the height of the figure
 
