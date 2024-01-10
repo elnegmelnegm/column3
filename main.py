@@ -21,9 +21,9 @@ st.write("Hover over points to see labels.")
 selected_category = st.selectbox("Select a category:", df['Column'])
 
 # Set color based on the selected category
-color_map = {category: 'red' if category == selected_category else 'gray' for category in df['Column']}
+df['Color'] = df['Column'].apply(lambda x: 'green' if x == selected_category else 'gray')
 
-fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color_discrete_map=color_map)
+fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color='Color')
 
 fig.update_traces(marker=dict(size=12))
 
@@ -31,8 +31,9 @@ fig.update_layout(scene=dict(
                     xaxis_title='Principal Component 1',
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
-                    width=850,  # Set the width of the figure
-                    height=690)  # Set the height of the figure
+                   
+                    width=900,  # Set the width of the figure
+                    height=700)  # Set the height of the figure
 
 # Make all legends gray
 fig.update_layout(legend=dict(title=dict(text=''), bgcolor='rgba(200, 200, 200, 0.7)'))
