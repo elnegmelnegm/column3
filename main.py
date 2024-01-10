@@ -31,11 +31,9 @@ fig.update_layout(scene=dict(
                     xaxis_title='Principal Component 1',
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
-                   
+                    showlegend=False,  # Remove legend
                     width=900,  # Set the width of the figure
                     height=700)  # Set the height of the figure
 
-# Make all legends gray
-fig.update_layout(legend=dict(title=dict(text=''), bgcolor='rgba(200, 200, 200, 0.7)'))
-
 st.plotly_chart(fig)
+
