@@ -1,8 +1,4 @@
 import streamlit as st
-from PIL import Image
-image_path = 'https://www.edaegypt.gov.eg/media/wc3lsydo/group-287.png'
-
-
 import plotly.express as px
 import pandas as pd
 
@@ -17,6 +13,10 @@ data = {
 
 df = pd.DataFrame(data)
 
+# Streamlit app
+st.title("3D Scatter Plot with Plotly and Streamlit")
+st.write("Hover over points to see labels.")
+
 # 3D Scatter Plot
 fig = px.scatter_3d(df, x='Prin1', y='Prin2', z='Prin3', text='Column', color='Column')
 
@@ -27,4 +27,6 @@ fig.update_layout(scene=dict(
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'))
 
-fig.show()
+st.plotly_chart(fig)
+
+
