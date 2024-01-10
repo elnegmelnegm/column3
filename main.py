@@ -100,7 +100,7 @@ data = {
 df = pd.DataFrame(data)
 
 # Streamlit app
-st.subheader("3D Scatter Plot with Principle Component Analysis for HPLC columns")
+st.subheader("3D Scatter Plot with Principle Component Analysis for HPLC columns Data")
 st.write("Hover over points to see labels.")
 
 # Selectbox for column selection
