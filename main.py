@@ -1,13 +1,12 @@
 import streamlit as st
-import plotly.express as px
 from PIL import Image
 image_path = 'https://www.edaegypt.gov.eg/media/wc3lsydo/group-287.png'
-st.image(image_path)
+
 
 import streamlit as st
 import plotly.express as px
 import pandas as pd
-
+st.image(image_path)
 # Complete data
 data = {
     'Column': ["Zorbax Extend C18", "Capcell C18 ACR", "SepaxGP-C18", "Zorbax Eclipse XDB C18", "Monitor C18",
