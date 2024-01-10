@@ -26,6 +26,6 @@ fig.update_layout(scene=dict(
                     xaxis_title='Principal Component 1',
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
-                    scene_bgcolor='rgba(50, 50, 50, 0.8)')  # Darker gray background
+                    scene_bgcolor='rgba(150, 150, 150, 0.8)')  # Darker gray background
 
 st.plotly_chart(fig)
