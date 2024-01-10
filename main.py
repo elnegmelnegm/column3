@@ -27,7 +27,7 @@ fig.update_layout(scene=dict(
                     yaxis_title='Principal Component 2',
                     zaxis_title='Principal Component 3'),
                     
-                    width=800,  # Set the width of the figure
-                    height=600)  # Set the height of the figure
+                    width=850,  # Set the width of the figure
+                    height=700)  # Set the height of the figure
 
 st.plotly_chart(fig)
