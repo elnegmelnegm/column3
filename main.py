@@ -97,11 +97,11 @@ data = {
 df = pd.DataFrame(data)
 
 # Streamlit app
-st.title("3D Scatter Plot with Plotly and Streamlit")
+st.title("3D Scatter Plot with Principle Component Analysis for HPLC columns")
 st.write("Hover over points to see labels.")
 
 # Selectbox for column selection
-selected_category = st.selectbox("Select a category:", df['Column'])
+selected_category = st.selectbox("Select a column:", df['Column'])
 
 # Set color based on the selected category
 df['Color'] = df['Column'].apply(lambda x: 'green' if x == selected_category else 'gray')
